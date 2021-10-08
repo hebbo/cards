@@ -1,10 +1,9 @@
 package main
 
-func main() {
-	cards := newDeck()
-	cards.print()
-}
+import "fmt"
 
-func newCard() string {
-	return "Five of Diamonds"
+func main() {
+	d := newDeck()
+	fmt.Println("writing to file...")
+	fmt.Println(d.saveToFile("udemy_golang"))
 }
