@@ -1,13 +1,11 @@
 package main
 
-func main() {
-	mydeck := newDeckFromFile("udemy_golang")
+import "cards/even"
 
-	// fmt.Println("before shuffling...")
+func main() {
+	// mydeck := newDeckFromFile("udemy_golang")
+	// mydeck.shuffle()
 	// mydeck.print()
 
-	mydeck.shuffle()
-
-	// fmt.Println("after shuffling...")
-	mydeck.print()
+	even.Call()
 }
