@@ -1,7 +1,7 @@
 package main
 
-import "cards/structs"
+import "cards/maps"
 
 func main() {
-	structs.Call()
+	maps.Call()
 }
