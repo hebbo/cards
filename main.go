@@ -1,7 +1,7 @@
 package main
 
-import "cards/maps"
+import "cards/interfaces"
 
 func main() {
-	maps.Call()
+	interfaces.Call()
 }
