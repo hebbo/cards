@@ -2,20 +2,30 @@ package http
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 )
 
+type LogWriter struct{}
+
+func (l LogWriter) Write(b []byte) (int, error) {
+	fmt.Println(string(b))
+	fmt.Println("custom implementation")
+
+	return len(b), nil
+}
+
 func Call() {
 	fmt.Println("Reaching out to Google...")
-	resp, err := http.Get("https://duckduckgo.com/")
+	resp, err := http.Get("https://www.google.com/")
 
 	if err != nil {
 		fmt.Println("Error: ", err)
 		os.Exit(1)
 	}
 
-	b := make([]byte, 10000)
+	b := make([]byte, 100)
 	_, err = resp.Body.Read(b)
 
 	if err != nil {
@@ -23,5 +33,7 @@ func Call() {
 		os.Exit(1)
 	}
 
-	fmt.Print(string(b))
+	writter := LogWriter{}
+
+	io.Copy(writter, resp.Body)
 }
