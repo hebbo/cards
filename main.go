@@ -1,7 +1,7 @@
 package main
 
-import "cards/interfaces"
+import "cards/interfaces/http"
 
 func main() {
-	interfaces.Call()
+	http.Call()
 }
