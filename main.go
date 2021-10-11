@@ -1,11 +1,7 @@
 package main
 
-import "cards/even"
+import "cards/structs"
 
 func main() {
-	// mydeck := newDeckFromFile("udemy_golang")
-	// mydeck.shuffle()
-	// mydeck.print()
-
-	even.Call()
+	structs.Call()
 }
